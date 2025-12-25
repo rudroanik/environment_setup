@@ -1,9 +1,11 @@
 package com.example.environment_setup;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
+@Data
 public class WelcomeService {
 
     @Value("${app.message}")
@@ -12,11 +14,4 @@ public class WelcomeService {
     @Value("${app.api.url}")
     private String apiUrl;
 
-    public String getMessage() {
-        return message;
-    }
-
-    public String getApiUrl() {
-        return apiUrl;
-    }
 }
